@@ -1,0 +1,100 @@
+<!-- BRUNA VIEIRA  - A00985171 -->
+<div class="template-calculator container">
+    <h3>Angular Calculator</h3>
+    <!-- Sum opertation -->
+   <div class="form-group">
+       
+       <label for="sum">SUM</label> <br>
+       
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="firstNumSum" (change)="reset()" name="firstNumSum" #fNumSum="ngModel" > 
+       
+       <span class='op'> + </span>
+
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="secondNumSum" (change)="reset()" name="secondNumSum" #sNumSum="ngModel" > 
+        
+       
+       <button [disabled]="!fNumSum.valid || !sNumSum.valid" (click)="calcSum()" class="btn btn-default">=</button> 
+
+       <span id='error' *ngIf="fNumSum?.errors?.pattern || sNumSum?.errors?.pattern; else templateName" class="alert alert-danger alert-dismissable fade in">
+               *A number is required.
+       </span>
+
+       <ng-template #templateName>
+               {{sum}}
+       </ng-template>       
+
+   </div>
+   
+   <!-- Difference opertation -->
+   <div class="form-group">
+       
+       <label for="diff">DIFFERENCE</label> <br>
+       
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="firstNumDiff" (change)="reset()" name="firstNumDiff" #fNumDiff="ngModel" > 
+       
+       <span class='op'> - </span>      
+
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="secondNumDiff" (change)="reset()" name="secondNumDiff" #sNumDiff="ngModel" > 
+       
+       <button [disabled]="!fNumDiff.valid || !sNumDiff.valid" (click)="calcDiff()" class="btn btn-default">=</button> 
+       
+       <span id="error" *ngIf="fNumDiff?.errors?.pattern || sNumDiff?.errors?.pattern" class="alert alert-danger alert-dismissable fade in"> 
+            *A number is required.
+        </span> 
+       
+       <span>{{difference}} </span> 
+       
+   </div>
+  
+   <!-- Product opertation -->
+
+   <div class="form-group">
+       
+       <label for="product">PRODUCT</label> <br>
+       
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="firstNumProd" (change)="reset()" name="firstNumProd" #fNumProd="ngModel" > 
+       
+       <span class='op'> * </span>   
+
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="secondNumProd" (change)="reset()" name="secondNumProd" #sNumProd="ngModel" > 
+       
+       <button [disabled]="!fNumProd.valid || !sNumProd.valid" (click)="calcProduct()" class="btn btn-default">=</button> 
+       
+       <span id="error" *ngIf="fNumProd?.errors?.pattern || sNumProd?.errors?.pattern" class="alert alert-danger alert-dismissable fade in"> 
+            *A number is required.
+        </span> 
+
+       <span>{{product}} </span>
+       
+   </div>
+   
+   <!-- Quotient opertation -->
+   
+   <div class="form-group">
+       
+       <label for="quotient">QUOTIENT</label> <br>
+       
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="firstNumQuo" (change)="reset()" name="firstNumQuo" #fNumQuo="ngModel" > 
+       
+       <span class='op'> / </span>   
+
+       <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$"  required 
+       [(ngModel)]="secondNumQuo" (change)="reset()" name="secondNumQuo" #sNumQuo="ngModel" > 
+       
+       <button [disabled]="!fNumQuo.valid || !sNumQuo.valid" (click)="calcQuotient()" class="btn btn-default">=</button> 
+       
+       <span id="error" *ngIf="fNumQuo?.errors?.pattern || sNumQuo?.errors?.pattern" class="alert alert-danger alert-dismissable fade in">
+            *A number is required.
+        </span> 
+
+       <span>{{quotient}} </span>
+   </div>
+</div>
+  

@@ -1,0 +1,57 @@
+/* Bruna Vieira A00985171 */ 
+
+.site-nav ul {
+    height: 10vh;
+    background-color:rgb(40, 63, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.site-nav a {
+    color: #f3f3f3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+}
+
+.site-nav li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.5s;
+    margin-bottom: 0;
+}
+
+.site-nav li:hover {
+    -webkit-box-shadow: inset 0px -15px 0px 0px rgb(94, 108, 131);
+    -moz-box-shadow: inset 0px -15px 0px 0px rgb(94, 108, 131);
+    box-shadow: inset 0px -15px 0px 0px rgb(94, 108, 131);
+    transition: box-shadow 0.5s;
+}
+
+.id_list {
+  list-style: none;
+}
+
+.name_list {
+  margin-right: 20px;
+}
+
+.detail, .value {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+
+.detail_label, .value_value {
+  margin: 0;
+  text-align: right;
+}
+
+.detail_label {
+  font-weight: 600;
+}

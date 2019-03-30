@@ -1,0 +1,10 @@
+
+<div class="template-food container">
+  <h3>Food items</h3>
+    <ul>
+      <li class="id_list" *ngFor="let foodItem of foodItems">
+        <a class="name_list" routerLink="/detail/{{foodItem.id}}">{{foodItem.id}}</a>
+        {{foodItem['name']}}
+      </li>
+    </ul>
+</div>

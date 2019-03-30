@@ -1,0 +1,41 @@
+<!-- Bruna Vieira A00985171 -->
+<div class="container template-temperature">
+    <h3>Temperature Conversion</h3>
+    <div class="row">
+        <p class="three columns">
+            Convert Celsius to Fahrenheit
+        </p>
+        <input placeholder="Enter &#8451;" class="two columns" type="text" pattern="[0-9]*" [(ngModel)]="celsius" name="inputCelsius" #inputCelsius="ngModel" required/>
+        <button class="button-primary three columns" (click)="submitCelsius(inputCelsius.valid)">Get Fahrenheit</button>
+    </div>
+    <p *ngIf="inputCelsius?.errors?.pattern && celsiusFormSubmitted" class="alert alert-danger alert-dismissable fade in">
+        Only numeric characters are allowed.
+    </p>
+    <p *ngIf="inputCelsius?.errors?.required && celsiusFormSubmitted" class="alert alert-danger alert-dismissable fade in">
+        Please enter a celsius temperature to convert.
+    </p>
+    <div class="row">
+        <p *ngIf="returnedFahrenheit" class="alert alert-success alert-dismissable fade in">
+            {{ displayedCelsius }}&#8451; is {{ returnedFahrenheit }}&#8457;.
+        </p>
+    </div>
+
+    <div class="row">
+        <p class="three columns">
+            Convert Fahrenheit to Celsius
+        </p>
+        <input placeholder="Enter &#8457;" class="two columns" type="text" pattern="[0-9]*" [(ngModel)]="fahrenheit" name="inputFahrenheit" #inputFahrenheit="ngModel" required/>
+        <button class="button-primary three columns" (click)="submitFahrenheit(inputFahrenheit.valid)">Get Celsius</button>
+    </div>
+    <p *ngIf="inputFahrenheit?.errors?.pattern && fahrenheitFormSubmitted" class="alert alert-danger alert-dismissable fade in">
+        Only numeric characters are allowed.
+    </p>
+    <p *ngIf="inputFahrenheit?.errors?.required && fahrenheitFormSubmitted" class="alert alert-danger alert-dismissable fade in">
+        Please enter a fahrenheit temperature to convert.
+    </p>
+    <div class="row">
+        <p *ngIf="returnedCelsius" class="alert alert-success alert-dismissable fade in">
+            {{ displayedFahrenheit }}&#8457; is {{ returnedCelsius }}&#8451;.
+        </p>
+    </div>
+</div>
