@@ -1,18 +1,20 @@
 {
   "name": "myapp",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "license": "MIT",
+  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "start1": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-  },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
   },
   "private": true,
   "dependencies": {
